@@ -1,0 +1,92 @@
+// Esto no ahorra nada
+
+// $grays: map-remove(
+// 	$grays,
+// 	"100",
+// 	"200",
+// 	"300",
+// 	"400",
+// 	"600",
+// 	"700",
+// 	"800",
+// 	"900"
+// );
+
+// Quitando $colors no se ahorra prácticamente nada. 1KB en total.
+
+// $colors: map-remove(
+// 	$colors,
+// 	"blue",
+// 	"indigo",
+// 	"purple",
+// 	"pink",
+// 	"red",
+// 	"orange",
+// 	"yellow",
+// 	"green",
+// 	"teal"
+// 	"cyan",
+// 	"white",
+// 	"gray",
+// 	"gray-dark"
+// );
+
+// De los $theme-colors no se puede quitar ninguno porque Understrap hace extends de componentes que usan estos colores, como por ejemplo .btn-success o .btn-outline-primary
+
+// $theme-colors: map-remove(
+// 	$theme-colors,
+// 	"primary",
+// 	"secondary",
+// 	"success",
+// 	"info",
+// 	"warning",
+// 	"danger",
+// 	"light",
+// 	"dark"
+// );
+
+// Ahorro de 3KB por cada spacer
+
+$spacers: map-remove(
+	$spacers,
+	// 1,
+	// 2,
+	// 3,
+	4,
+	5
+);
+
+// Con las sizes ahorramos 1KB en total
+
+// $sizes: map-remove(
+// 	$sizes,
+// 	25,
+// 	50,
+// 	75,
+// 	100,
+// 	auto
+// );
+
+// Con los breakpoints podemos ahorrar 10KB por cada uno
+
+// $grid-breakpoints: map-remove(
+// 	$grid-breakpoints,
+// 	xs,
+// 	sm,
+// 	md,
+// 	lg,
+// 	xl
+// );
+
+// Los max-width no merece la pena optimizarlos, se ahorra 1KB
+
+// $container-max-widths: map-remove(
+// 	$container-max-widths,
+// 	sm,
+// 	md,
+// 	lg,
+// 	xl
+// );
+
+
+

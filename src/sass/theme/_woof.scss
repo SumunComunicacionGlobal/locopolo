@@ -1,0 +1,32 @@
+.woof_step {
+
+    button {
+        @extend .btn;
+        @extend .btn-primary;
+        @extend .rounded-pill;
+    }
+
+}
+
+.woof_reset_button_2 {
+    @extend .btn;
+    @extend .btn-sm;
+    @extend .btn-outline-primary;
+    @extend .rounded-pill;
+}
+
+.text-bg-dark {
+    
+    .woof_step {
+        background-color: transparent;
+        padding: 0;
+        border: 0;
+
+        button {
+            @extend .btn-outline-light;
+        }
+    
+    }
+
+}
+

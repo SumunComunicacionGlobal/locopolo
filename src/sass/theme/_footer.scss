@@ -1,0 +1,78 @@
+#wrapper-footer-full,
+#wrapper-footer {
+	background-color: transparent;
+
+	@include media-breakpoint-down(sm) {
+		text-align: center;
+
+		.is-layout-flex,
+		.d-flex {
+			justify-content: center;
+		}
+	}
+
+}
+
+#wrapper-footer {
+	text-align: center;
+}
+
+#fixed-right-sidebar {
+	position: fixed;
+	right: $spacer/2;
+	// bottom: 20%;
+	bottom: 80px;
+
+	.is-layout-flex {
+		flex-direction: column;
+	}
+}
+
+.brand-stamps-dropup {
+	position: fixed;
+	bottom: 60px;
+	left: $spacer;
+
+	.dropdown-toggle:after {
+		content: none;
+	}
+
+	a {
+		display: inline-block;
+		margin-top: $spacer;
+
+		// > img {
+		// 	animation: rotate 8s linear infinite;
+		// }
+	}
+
+	img {
+		width: 115px;
+		height: auto;
+		transition: $transition-base;
+		border-radius: 300px;
+		background-color: $white;
+	}
+
+	.dropdown-menu {
+		flex-direction: column-reverse;
+		gap: $spacer;
+		padding-bottom: $spacer;
+
+		&.show {
+			display: flex;
+		}
+	}
+
+	.dropdown-toggle,
+	.dropdown-menu {
+
+		&.show {
+
+			img {
+				background-color: $white;
+			}
+		}
+	
+	}
+}

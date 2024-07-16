@@ -1,0 +1,459 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body.admin-bar {
+
+	.fixed-top,
+    .offcanvas {
+		top: 46px;
+
+		@include media-breakpoint-up(md) {
+			top: 32px;
+		}
+	}
+}
+
+body.padded-bottom-page {
+
+    #page-wrapper {
+        padding-bottom: 8rem;
+    }
+
+}
+
+.sticky-top {
+    top: 100px;
+}
+
+.wrapper {
+    padding: 4rem 0;
+}
+
+#page > .wrapper > .container,
+#page > .container,
+.products-carousel .slide > .container {
+
+    @include media-breakpoint-down(sm) {
+        padding-left: 40px;
+        padding-right: 51px;
+    }
+}
+
+#wrapper-navbar + .wrapper {
+    padding-top: 6rem;
+    padding-bottom: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 8rem;
+    }
+}
+
+.hero-carousel {
+    padding-top: 6rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 8rem;
+    }
+}
+
+.admin-bar #wrapper-navbar + .wrapper,
+.hero-carousel {
+    min-height: calc( 100vh - 46px );
+}
+
+body.page-template-find-us {
+    
+    #wrapper-navbar+.wrapper {
+        align-items: flex-start;
+    }
+
+    @include media-breakpoint-up(md) {
+
+        .facetwp-template {
+            overflow: scroll;
+            height: calc(100vh - 400px);
+            min-height: 300px;
+        }
+
+    }
+
+    @include media-breakpoint-up(lg) {
+
+        .facetwp-template {
+            height: calc(100vh - 340px);
+        }
+
+    }
+
+}
+
+body.understrap-has-sidebar {
+
+    @include media-breakpoint-up(md) {
+        .content-area {
+            margin-right: 8.333333%;
+        }
+    }
+
+}
+
+.stretch-linked-block {
+    position: relative;
+    transition: $transition-base;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    a {
+        transition: $transition-base;
+        text-decoration: none;
+    }
+}
+
+.full-screen {
+	min-height: 100vh;
+}
+
+.pagination {
+	margin-top: $spacer * 2;
+	justify-content: center;
+}
+
+.comments-area {
+	margin-top: $spacer * 3;
+}
+
+.back-to-top {
+	position: fixed;
+	right: $spacer;
+	bottom: -60px;
+	width: 60px;
+	height: 60px;
+	background-color: $secondary;
+    box-shadow: $box-shadow-sm;
+	border: $border-width solid $body-color;
+	color: $body-color;
+	opacity: 0;
+	transition: $transition-base;
+	z-index: $zindex-dropdown;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        transform: rotate(270deg);
+        mask-image: url('../img/flecha-derecha-blanca.svg');
+        mask-size: 30px auto;
+        mask-position: center;
+        mask-repeat: no-repeat;
+        background-color: $body-color;
+    
+    }
+
+	&:hover {
+		background-color: darken($secondary, 10);
+	}
+}
+
+.btn-close {
+    background-color: $white;
+}
+
+body.scrolled .back-to-top {
+	opacity: .9;
+	bottom: $spacer;
+}
+
+#search-collapse {
+    background-color: $blue-300;
+}
+
+#wrapper-carousel-ad {
+    text-align: center;
+    background-color: $secondary;
+    padding: $spacer * .5 0;
+    font-family: $font-family-monospace;
+    // z-index: $zindex-dropdown;
+
+    .eocjs-newsticker {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .eocjs-newsticker .eocjs-newsticker-one, 
+    .eocjs-newsticker .eocjs-newsticker-two {
+
+        > *:first-child {
+            margin-left: 100px;
+        }
+    }
+
+    * {
+        margin-bottom: 0;
+    }
+
+    .widget,
+    p {
+        display: inline-block;
+        width: auto;
+    }
+
+    a {
+        text-decoration: none;
+        color: unset;
+    }
+
+    &.footer-ticker-link {
+        text-decoration: none;
+        color: unset;
+        transition: $btn-transition;
+
+        img,
+        svg {
+            transition: $transition-base;
+        }
+    
+        &:hover {
+            color: $white;
+            background-color: $dark;
+
+            img,
+            svg {
+                filter: brightness(100);
+                fill: $white !important;
+                opacity: 1;
+
+                &[src*=svg] {
+                    filter: invert(1);
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+
+.badge--wrapper {
+    filter: drop-shadow( .35em .35em 0 $border-color );
+
+    h1.badge,
+    h2.badge,
+    h3.badge {
+        font-size: 1.375rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+
+        h1.badge {
+            font-size: $h1-font-size;
+        }
+
+        h2.badge {
+            font-size: $h2-font-size;
+        }
+
+        h3.badge {
+            font-size: $h3-font-size;
+        }
+
+    }
+
+
+
+    &.term-badge {
+        // display: inline-block;
+        // margin-bottom: $spacer*2;
+        // transform: rotate($rotation);
+
+        .badge {
+            font-size: 1.875rem;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 2.25rem;
+            }
+
+            @include media-breakpoint-up(xl) {
+                font-size: 3.25rem;
+            }
+        }
+    }
+
+}
+
+.badge-sticker--wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: $spacer*2;
+    transform: rotate(-15deg);
+
+    &.has-smiley {
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            transform: translate(20px, -50%) rotate(-30deg);
+            background-image: url('../img/smiley.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 1;
+            filter: drop-shadow( .35em .35em 0 $border-color );
+        }
+
+    }
+
+    .sticker {
+        transform: rotate(15deg);
+    }
+
+}
+
+.badge {
+    position: relative;
+    clip-path: polygon( 0% 0%, calc(100% - .65em) 0%, 100% calc(0% + .65em), 100% 100%, 0% 100%);
+    box-shadow: inset 0 0 0 $border-width $border-color;
+    background-color: $white;
+    text-align: left;
+    white-space: normal;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: $border-width;
+        right: calc(.65em - .65em * 1.41421);
+        width: calc(.65em * 1.41421);
+        transform-origin: left top;
+        transform: rotate(45deg);
+        background-color: $border-color;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-top: .25em;
+        padding-bottom: .25em;
+    }
+
+}
+
+.sticker {
+    position: absolute;
+    z-index: 1;
+    top: -2.25rem;
+    left: -1.25rem;
+    // width: 2.5rem;
+    // height: 2.5em;
+    // padding: .25rem;
+    background-color: $yellow;
+    border-radius: $border-radius-pill;
+    box-shadow: $box-shadow-sm;
+    border: $border-width solid $border-color;
+
+    @include media-breakpoint-up(lg) {
+        top: -3.25rem;
+        left: -2rem;
+        // width: 4rem;
+        // height: 4rem;
+    }
+
+    img,
+    svg {
+        display: block;
+        width: 3.25rem;
+        height: 3.25rem;
+        padding: .35rem;
+        object-fit: contain;
+
+        @include media-breakpoint-up(lg) {
+            width: 4em;
+            height: 4em;
+            padding: .5em;
+        }
+    }
+
+    &.sticker-smiley {
+        width: 24px;
+        height: 24px;
+        box-shadow: .1rem .4rem 0 0 rgba($black, .14);
+        transform: translateY(-50%) rotate(-30deg);
+        left: 10px;
+        top: 0;
+        background-image: url('../img/smiley.svg');
+        background-size: contain;
+        background-position: center;
+        border: 0;
+
+        @include media-breakpoint-up(xl) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+.tooltip {
+    
+}
+.tooltip-inner {
+    padding-top: $spacer;
+    border: $border-width solid $border-color;
+    box-shadow: $box-shadow-sm;
+    font-weight: $font-weight-bold;
+    text-align: left;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    .wp-block-image {
+        margin-bottom: $paragraph-margin-bottom;
+    }
+
+}
+// .bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow {
+//     filter: drop-shadow(0px -#{$border-width} 0px $dark);
+// }
+.tooltip-arrow {
+    display: none !important;
+}
+
+.shadow-light-circle,
+.term-icon {
+    position: relative;
+    
+    &:before {
+        content: "";
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        width: 100%;
+        height: 100%;
+        border-radius: $border-radius-pill;
+        background-color: $dark;
+        opacity: .14;
+        z-index: -1;
+    }
+
+}
+
+.card.shadow {
+    margin-right: .5rem;
+}

@@ -1,0 +1,229 @@
+.bg-cover { 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+}
+
+.wp-block-image figcaption {
+	font-size: $font-size-sm;
+}
+
+.object-fit-cover {
+	object-fit: cover;
+}
+
+a {
+
+	img, svg {
+		transition: $transition-fade;
+	}
+
+	// &:hover {
+	// 	img, svg {
+	// 		opacity: .7;
+	// 	}
+	// }
+}
+
+.store-icon-circle {
+	width: 100%;
+	height: auto;
+	max-width: 6rem;
+	margin-left: auto;
+
+}
+
+.multi-featured-image {
+
+	img {
+		transition: $transition-base;
+
+		&:not(:first-child) {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			opacity: 0 !important;
+		}
+
+		&:first-child {
+			position: relative;
+			z-index: 10;
+		}
+
+		@for $i from 1 through 4 {
+			&:nth-child(#{$i}) {
+				z-index: #{10 - $i};
+			}
+		}
+
+	}
+
+	// &:before {
+
+	// 	position: absolute;
+	// 	left: 0;
+	// 	top: 20%;
+	// 	z-index: 20;
+	// 	transition: $transition-base;
+	// 	transition-delay: .25s;
+	// 	transform: translateX(-50%) scale(0) rotate(45deg);
+
+	// 	content: "";
+	// 	width: 70px;
+	// 	height: 100px;
+	// 	background-image: url('../img/destello.svg');
+	// 	background-repeat: no-repeat;
+	// 	background-size: contain;
+	// 	background-position: center;
+	// }
+
+}
+
+.multi-featured-image {
+	position: relative;
+	max-width: 520px;
+	margin: 0 auto;
+
+	.multi-featured-image--inner {
+		position: relative;
+
+		// &:before,
+		.image-spark {
+			position: absolute;
+			left: 0;
+			top: 7%;
+			z-index: 20;
+			transition: $transition-base;
+			transition-delay: .25s;
+			transform: translateX(-50%) scale(0) rotate(45deg);
+
+			// content: "";
+			width: 40px;
+			height: 60px;
+			background-image: url('../img/destello.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+
+			@include media-breakpoint-up(md) {
+				width: 70px;
+				height: 100px;
+			}
+		}
+
+	}
+
+	&.product-image:before {
+		transform: translateX(-50%) scale(1) rotate(0);
+	}
+
+}
+
+.slick-current .multi-featured-image,
+.product-image .multi-featured-image {
+
+	.multi-featured-image--inner {
+		// margin-right: 20%;
+		// margin-top: 10%;
+
+		// &:before,
+		.image-spark {
+			transform: translateX(-50%) scale(1) rotate(0);
+		}
+	
+	}
+
+	&:hover img {
+		opacity: 1 !important;
+
+		// @for $i from 1 through 4 {
+		// 	&:nth-child(#{$i}) {
+		// 		transform: translate( #{($i - 1) * 15%}, #{-($i - 1) * 13% } ) scale( #{1 - (0.05 * ($i - 1))} );
+		// 	}
+		// }
+
+		// &:first-child {
+		// 	filter: drop-shadow(15px -15px 15px rgba($dark, .12));
+		// }
+
+		&:nth-child(2) {
+			transform: translate( 15%, -13% ) scale(0.95);
+		}
+
+		&:nth-child(3) {
+			transform: translate( 36%,-32% ) scale(.75);
+		}
+
+	}
+
+}
+
+.product-video {
+	border-radius: $border-radius-lg;
+	overflow: hidden;
+}
+
+.zones-map {
+
+	svg {
+		max-height: 600px;
+	}
+
+	#zones-map {
+		text-align: center;
+	}
+
+	path {
+		fill: $body-bg;
+		stroke: $dark;
+		stroke-width: 1px;
+
+		&.has-sale-points {
+			
+			&:hover {
+				fill: $secondary;
+				cursor: pointer;
+			}
+
+		}
+
+	}
+
+	rect {
+		fill: blue;
+		width: 1rem;
+		height: 1rem;
+	}
+
+	image {
+		// fill: white;
+		// border-radius: 100px;
+		pointer-events: none;
+
+		&.has-sale-points {
+			width: 4%;
+			height: auto;
+			// width: 10px;
+			// height: 10px;
+			transform: translate(-2%, -2%);
+			// background-image: url('../img/smiley.svg');
+			// background-repeat: no-repeat;
+			// background-size: contain;
+
+			@include media-breakpoint-up(md) {
+				// width: 14px;
+				// height: 14px;
+				// transform: translate(-7px, -7px);
+			}
+
+		}
+
+		&.no-sale-points {
+			display: none;
+		}
+	}
+}

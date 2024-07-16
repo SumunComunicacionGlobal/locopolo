@@ -1,0 +1,402 @@
+.valores-nutricionales {
+
+    a {
+        text-decoration: none;
+    }
+    
+    &--item {
+        display: block;
+        margin-bottom: $spacer * .5;
+
+        &:hover .progress,
+        .progress--wrapper {
+            height: $progress-height * 2;
+        }
+
+    }
+
+    &--item-title {
+        font-size: $font-size-sm;
+        margin-bottom: $spacer * .125;
+    }
+
+    .progress {
+        transition: $transition-base;
+        border: 1px solid $border-color;
+        border-radius: $progress-border-radius;
+    }
+
+    .btn {
+        padding: 0;
+        display: block;
+        text-align: left;
+    }
+}
+
+.valores-nutricionales--ver-todo {
+    text-align: right;
+}
+
+.single-product-categories {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: $spacer*2;
+
+    .term-badges .badge {
+        font-size: $h1-font-size;
+        margin-bottom: 6px;
+    }
+
+    @include media-breakpoint-down(lg) {
+        .term-badges .badge {
+            font-size: 1.5rem;
+        }
+        .sticker {
+
+            img,
+            svg {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+    }
+
+}
+
+.single-product--content-column {
+    padding-top: $spacer * 1.5;
+
+    .entry-title {
+        margin-bottom: $paragraph-margin-bottom;
+    }
+}
+
+.related-product > a,
+.product-image {
+    position: relative;
+    display: block;
+    padding-bottom: 40px;
+
+    &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: 25%;
+        background: url('../img/sombra-producto.png') no-repeat center center;
+        background-size: contain;
+        bottom: 0;
+        transition: $transition-base
+    }
+
+}
+
+.product-card--wrapper {
+    position: relative;
+    padding-bottom: $spacer*3;
+    margin-bottom: 100px;
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 80%;
+        height: 150px;
+        background: url('../img/sombra-producto.png') no-repeat center center;
+        background-size: contain;
+        // top: 100%;
+        transition: $transition-base
+    }
+
+    .product-card--image-wrapper {
+        margin-bottom: -90px;
+        position: relative;
+        z-index: 1;
+        transition: $transition-base;
+        // max-width: 400px;
+        margin-left: auto;
+    }
+    
+    .product-card {
+        max-width: 768px;
+        padding-bottom: 2rem;
+
+        .card-body {
+            z-index: 1;
+            position: relative;
+            // pointer-events: none;
+            // padding-bottom: $card-spacer-y * 2;
+            padding-bottom: 0;
+            padding-right: 15%;
+
+            @include media-breakpoint-only(lg) {
+                font-size: $font-size-sm;
+            }
+        }
+    
+        .product-card--title {
+            padding-right: 30%;
+            margin-bottom: .5em;
+        }
+
+        .product-card--button {
+            text-transform: uppercase;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .product-card--meta {
+            display: flex;
+            gap: $spacer;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 0 $card-spacer-x;
+
+            .product-card--meta-item {
+                
+                &.allergens {
+                    flex-grow: 1;
+                }
+
+                &.kcal {
+                    font-size: 1.5rem;
+                    font-weight: $font-weight-bold;
+                    line-height: 1;
+                }
+
+            }
+        }
+
+        &.product-cat-card {
+
+            .product-card--title {
+                text-transform: uppercase;
+            }
+        }
+
+    }
+
+    .new-product-sticker {
+        position: absolute;
+        right: -$spacer;
+        width: 100px;
+        bottom: 0;   
+        z-index: 1;
+    }
+
+    // .product-card--title-badge {
+    //     position: absolute;
+    //     left: 30%;
+    //     top: 0;
+    //     z-index: 2;
+    // }
+
+    .product-card--title-badge {
+        position: absolute;
+        z-index: 2;
+        top: -20%;
+        left: 20%;
+
+        @include media-breakpoint-up(xl) {
+            left: 30%;
+        }
+    
+        &:after {
+            content: "";
+            width: 56px;
+            height: 150px;
+            position: absolute;
+            left: 50px;
+            top: 0;
+            z-index: -1;
+            background-image: url('../img/call-line.svg');
+            background-position: left bottom;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .badge {
+            font-size: 2rem;
+        }
+    
+    }
+
+    .product-card--subterms-icons {
+        display: flex;
+        gap: $spacer;
+        flex-wrap: wrap;
+
+        &:last-child {
+            margin-bottom: -$spacer*3;
+            margin-left: -$spacer*2;
+        }   
+
+        .term-icon {
+            display: block;
+        }
+
+        .term-name {
+            position: absolute;
+            transition: $transition-base;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            transform: translate(-30%, -50%) rotate($rotation);
+            padding: $btn-padding-y-sm $btn-padding-x;
+        }
+
+        .term--wrapper {
+            position: relative;
+
+            &:hover {
+
+                .term-icon {
+                    background-color: $secondary;
+                }
+
+                .term-name {
+                    opacity: 1;
+                    background-color: $secondary;
+                }
+            }
+
+        }
+    }
+    
+
+    @include media-breakpoint-up(md) {
+
+        .product-card {
+            width: 65%;
+
+            .product-card--button {
+                left: 0;
+                top: 0;
+                bottom: unset;
+                transform: translate(-50%, -50%) rotate($rotation);
+            }
+
+            .product-card--title {
+                padding-right: 0;
+            }
+
+            .card-body {
+                padding: 1.75rem 30% 0 1.75rem;
+                min-height: 250px;
+                // padding-right: 30%;
+            }
+
+            .product-card--meta {
+                padding-left: 1.75rem;
+            }
+
+        }
+
+        .product-card--image-wrapper {
+            margin-bottom: 0;
+            position: absolute;
+            right: 0;
+            top: -30%;
+            width: 60%;
+
+            img {
+                // max-width: 250%;
+                // position: absolute;
+                // right: 0;
+                // bottom: 0;
+                // height: 600px;
+                object-fit: contain;
+                object-position: right bottom;    
+            }
+        }
+
+        .new-product-sticker {
+            right: 27%;
+            bottom: -$spacer;
+            width: 180px;
+        }
+
+    }
+
+    @include media-breakpoint-up(xl) {
+
+        .product-card {
+
+            .product-card--title {
+                line-height: 1;
+                font-size: 3rem;
+            }
+
+            &.product-cat-card {
+
+                .product-card--title {
+                    font-size: 4rem;
+                }
+
+            }
+
+            .card-body {
+                padding-left: 2.5rem;
+            }
+        
+        }
+
+    }
+
+}
+
+.term-icon {
+    transition: $transition-base;
+    border-radius: $border-radius-pill;
+    border: $border-width solid $border-color;
+    box-shadow: $box-shadow-sm;
+    background-color: $white;
+
+    img {
+        width: 95px;
+        height: 95px;
+        padding: 1rem;
+        object-fit: contain;
+
+        @include media-breakpoint-up(xl) {
+            width: 120px;
+            height: 120px;
+        }
+    }
+}
+
+.term-icons {
+    display: flex;
+    flex-wrap: wrap;
+
+    
+    &.allergens {
+        gap: $spacer*.5;
+
+        .term-icon {
+            box-shadow: none;
+            border: 0;
+            border-radius: 0;
+            background-color: transparent;
+
+            img {
+                width: 40px;
+                height: 40px;
+                padding: 6px;
+            }
+
+            &:before {
+                content: none;
+            }
+
+        }
+    }
+
+}
