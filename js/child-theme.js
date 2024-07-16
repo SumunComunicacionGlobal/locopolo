@@ -6752,34 +6752,14 @@
 	    });
 	  });
 	  var body = $('body');
-	  // var lastScrollTop = 0;
-	  // var navbarClasses = $('#main-nav').attr('class');
-
 	  jQuery(window).scroll(function (event) {
 	    var scroll = $(this).scrollTop();
-	    // if ( scroll > lastScrollTop ) {
-	    //     body.removeClass("scrolled-upwards");
-	    // } else {
-	    //     body.addClass("scrolled-upwards");
-	    // }
-	    // lastScrollTop = scroll;
-
 	    if (scroll >= 30) {
 	      body.addClass("scrolled");
-	      // $('#main-nav').removeClass('navbar-dark');
-	      // $('#main-nav').addClass('navbar-light');
 	    } else {
 	      body.removeClass("scrolled");
-	      // $('#main-nav').removeClass('navbar-light navbar-dark').addClass(navbarClasses);
 	    }
-
-	    //  if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-	    //      body.addClass("near-bottom");
-	    //  } else {
-	    //       body.removeClass("near-bottom");
-	    //  }
 	  });
-
 	  $('#navbarNavOffcanvas').on('show.bs.offcanvas', function () {
 	    body.addClass('menu-open');
 	  });

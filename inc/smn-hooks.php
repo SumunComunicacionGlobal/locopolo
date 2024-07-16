@@ -33,7 +33,7 @@ function smn_wpcf7_form_control_class( $scanned_tag, $replace ) {
    return $scanned_tag;
 }
 
-// Add body classes if is_page
+// Add body classes
 add_filter( 'body_class', 'smn_add_page_body_class' );
 function smn_add_page_body_class( $classes ) {
     if ( is_page() && !is_front_page() ) {
@@ -52,10 +52,6 @@ function top_anchor() {
     echo '<div id="top">';
 }
 
-// add_action( 'wp_footer', 'back_to_top', 20 );
-function back_to_top() {
-    echo '<a href="#top" class="back-to-top"></a>';
-}
 
 add_action( 'wp_footer', 'smn_show_brand_stamps_dropup' );
 function smn_show_brand_stamps_dropup() {
@@ -102,17 +98,6 @@ function smn_carousel_ad() {
         }    
         ?>
 
-
-        <!--
-        <script>
-    
-            jQuery("#footer-ticker").eocjsNewsticker({
-                speed: 20,
-                divider: ' - '
-            });
-    
-        </script>
-        -->
     <?php }
 
 }
@@ -158,16 +143,6 @@ function cargar_sidebar( $valor ) {
     return $valor;
 }
 
-// add_filter( 'parse_tax_query', 'smn_do_not_include_children_in_product_cat_archive' );
-// function smn_do_not_include_children_in_product_cat_archive( $query ) {
-//     if ( 
-//         ! is_admin() 
-//         && $query->is_main_query()
-//         && $query->is_tax( 'product_cat' )
-//     ) {
-//         $query->tax_query->queries[0]['include_children'] = 0;
-//     }
-// }
 
 add_filter( 'understrap_site_info_content', function($site_info) {
 
@@ -184,22 +159,6 @@ function smn_change_store_permalink( $permalink, $post, $leavename ) {
 }
 add_filter('post_link', 'smn_change_store_permalink', 10, 3);
 
-// add_filter( 'nav_menu_link_attributes', 'smn_allow_bootstrap_dropdown_link', 10, 4 );
-function smn_allow_bootstrap_dropdown_link( $atts, $item, $args, $depth ) {
-
-    if ( isset($atts['data-bs-toggle']) && 'dropdown' == $atts['data-bs-toggle'] ) {
-
-        if ( 'post_type' == $item->type ) {
-            $atts['href'] = get_permalink( $item->object_id );
-        } elseif ( 'taxonomy' == $item->type ) {
-            $atts['href'] = get_term_link( $item->object_id );
-        }
-    
-    }
-
-    return $atts;
-
-}
 
 add_filter('icl_ls_languages', 'modify_language_switcher');
 function modify_language_switcher($languages) {

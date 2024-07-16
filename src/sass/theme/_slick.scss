@@ -38,14 +38,7 @@
 .slick-carousel {
 	position: relative;
 
-	.slick-list {
-		// margin-left: -$grid-gutter-width;
-		// margin-right: -$grid-gutter-width;
-	}
-
 	.slick-slide {
-		// padding-left: $grid-gutter-width;
-		// padding-right: $grid-gutter-width;
 		transition: $transition-base;
 		transform-origin: right center;
 
@@ -99,37 +92,8 @@
 
 	}
 
-	@include media-breakpoint-up(lg) {
-
-		.slick-list {
-
-		}
-				
-		// .slick-track {
-		// 	min-height: 680px;
-		// 	display: flex;
-		// 	align-items: flex-end;
-		// }
-
-		.slick-slide {
-
-		}
-
-		.slick-slide.slick-current {
-			// transform: scale(1.3);
-		}
-
-	}
-
 }
 
-.slick-slider {
-
-	&.slick-dotted {
-
-	}
-
-}
 
 .slick-dots {
 	bottom: 0;
@@ -144,10 +108,6 @@
 			&:before {
 				font-size: .875rem;
 			}
-		}
-
-		&.slick-active button {
-
 		}
 
 	}
@@ -169,23 +129,20 @@
 		}
 	}
 
-	// @include media-breakpoint-up(md) {
-		.slick-list {
-			// overflow: visible;
-			padding-top: 8rem;
-			margin-top: -8rem;
+	.slick-list {
+		padding-top: 8rem;
+		margin-top: -8rem;
 
-			@include media-breakpoint-up(sm) {
-				padding-top: 13rem !important;
-				margin-top: -13rem;
-			}
-
-			@include media-breakpoint-up(xl) {
-				padding-top: 16rem !important;
-				margin-top: -16rem;
-			}
+		@include media-breakpoint-up(sm) {
+			padding-top: 13rem !important;
+			margin-top: -13rem;
 		}
-	// }
+
+		@include media-breakpoint-up(xl) {
+			padding-top: 16rem !important;
+			margin-top: -16rem;
+		}
+	}
 
 	&.one-slide-centered-carousel {
 
@@ -198,15 +155,6 @@
 		}
 	}
 
-	// .slick-list {
-	// 	margin-left: -4rem;
-	// 	margin-right: -4rem;	
-	// }
-
-	// .slick-slide {
-	// 	padding-left: 4rem;
-	// 	padding-right: 4rem;
-	// }
 }
 
 .slick-navigation-container {
@@ -333,10 +281,6 @@
 			left: 0;
 		}
 
-		img {
-
-		}
-	
 	}
 
 }

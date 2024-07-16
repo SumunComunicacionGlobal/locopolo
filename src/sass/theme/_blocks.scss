@@ -32,7 +32,6 @@ body.understrap-no-sidebar {
 .wp-block-button__link {
     font-family: $btn-font-family;
     font-weight: $btn-font-weight;
-    // min-width: 8.0vw;
     min-width: 100px;
 }
 
@@ -44,14 +43,6 @@ body.understrap-no-sidebar {
     }
 }
 
-// .btn-primary,
-// .btn-secondary {
-//     border-color: $border-color;
-
-//     &:hover {
-//         border-color: $border-color
-//     }
-// }
 
 .btn,
 .btn:hover,
@@ -74,7 +65,6 @@ body.understrap-no-sidebar {
     img {
         height: 16px;
         width: 34px;
-        // transition: height .3s ease;
         background-color: transparent;
         transition: height .2s ease, background-color .1s ease .1s;
     }
@@ -82,8 +72,6 @@ body.understrap-no-sidebar {
     &:hover {
         
         img {
-            // object-fit: cover;
-            // transition: height .3s ease .1s, background-color .1s ease;
             height: 2px;
             background-color: $dark;
         }
@@ -136,7 +124,6 @@ body.understrap-no-sidebar {
         }
 
         &:after {
-            // transform: scale(1.2);
             opacity: 0;
         }
     }
@@ -171,18 +158,6 @@ body.understrap-no-sidebar {
     .wp-block-column .wp-block-cover {
         height: 100%;
     }
-}
-
-.redes-sociales {
-	display: flex;
-	width: 100%;
-	align-items: center;
-
-	.red-social {
-		font-size: 2rem;
-		margin-right: 1rem;
-	}
-
 }
 
 .wp-block-social-links.is-style-logos-only .wp-social-link svg {

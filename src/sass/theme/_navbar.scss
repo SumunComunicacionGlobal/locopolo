@@ -1,14 +1,13 @@
+#wrapper-navbar {
+    @extend .fixed-top;
+}
+
 body.scrolled:not(.menu-open) #wrapper-navbar {
     backdrop-filter: blur(10px);
 }
 
 .offcanvas {
     
-    &.offcanvas-top {
-        //bottom: 0;
-        //height: unset;
-    }
-
     &.text-bg-dark {
 
         &.showing,
@@ -291,9 +290,6 @@ body.has-ticker .offcanvas {
     .brand-logos-dropdown--sticker {
         flex-grow: 0;
         flex-shrink: 0;
-        // transition: $transition-base;
-        // opacity: 0;
-
     }
 
     .dropdown-toggle {
@@ -332,13 +328,8 @@ body.has-ticker .offcanvas {
 }
 
 .dropdown-menu.dropdown-transparent {
-    // padding: $spacer 0 0;
     padding: 0;
     background-color: transparent;
     border: 0;
     box-shadow: none;
-}
-
-.dropdown-menu[data-bs-popper] {
-    // top: unset;
 }

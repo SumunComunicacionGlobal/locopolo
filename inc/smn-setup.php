@@ -33,11 +33,6 @@ function understrap_all_excerpts_get_more_link( $post_excerpt ) {
 	return $post_excerpt;
 }
 
-// add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-function custom_excerpt_length( $length ) {
-     return 25;
-}
-
 add_filter( 'get_the_archive_title', 'prefix_category_title' );
 function prefix_category_title( $title ) {
     if ( is_tax() || is_category() || is_tag() ) {
@@ -53,6 +48,6 @@ function smn_pre_get_posts($query) {
     if (!$query->is_main_query() || is_admin() ) return;
 
     if (is_search()) {
-        $query->set('posts_per_page', 30);
+        $query->set('posts_per_page', 48);
     }
 }

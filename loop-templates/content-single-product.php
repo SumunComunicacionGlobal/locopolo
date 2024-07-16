@@ -21,14 +21,16 @@ if ( $kcal ) {
 }
 $product_cats = wp_get_object_terms( get_the_ID(), 'product_cat' );
 $product_cats_list = '';
+
 foreach( $product_cats as $cat ) {
+
 	$sticker_image = '';
 	$term_icon = get_field( 'term_icon', $cat );
 	if ( $term_icon ) {
 		$sticker_image = '<span class="sticker">' . wp_get_attachment_image( $term_icon, 'thumbnail' ) . '</span>';
 	}
 	$product_cats_list = '<div class="position-relative">'.$sticker_image.'<span class="badge--wrapper"><span class="badge">' . $cat->name . '</span></span></div>';
-	// $product_cats_list = '<span class="badge">' . $sticker_image . $cat->name . '</span></span>';
+
 }
 
 if ( $product_cats_list ) $product_cats_list = '<div class="term-badges">' . $product_cats_list . '</div>';
@@ -42,10 +44,7 @@ if ( $product_cats_list ) $product_cats_list = '<div class="term-badges">' . $pr
 
 			<div class="single-product-categories mb-5">
 
-				<?php 
-				// echo strip_tags( get_the_term_list( null, 'product_cat', '<div class="term-badges"><span class="badge--wrapper"><span class="badge">' . $sticker_image, '</span></span><span class="badge--wrapper"><span class="badge">', '</span></span></div>' ), array( '<div>', '<span>' ) );
-				echo $product_cats_list;
-				?>
+				<?php echo $product_cats_list; ?>
 
 				<a class="btn btn-dark" href="<?php echo get_permalink( PIDE_YA_ID ); ?>"><?php echo get_the_title( PIDE_YA_ID ); ?></a>
 
@@ -54,8 +53,6 @@ if ( $product_cats_list ) $product_cats_list = '<div class="term-badges">' . $pr
 			<div class="product-image animation-floating">
 
 				<?php smn_multi_image( $post ); ?>
-
-				<?php // echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
 			</div>
 

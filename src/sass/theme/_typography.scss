@@ -54,46 +54,6 @@ p[style*=font-size] {
     margin-left: $spacer;
 }
 
-h1, .h1 {
-
-}
-
-h2, .h2 {
-
-}
-
-h3, .h3 {
-
-}
-
-h4, .h4 {
-
-}
-
-h5, .h5 {
-
-}
-
-h6, .h6 {
-
-}
-
-.display-1 {
-
-}
-
-.display-2 {
-
-}
-
-.display-3 {
-
-}
-
-.display-4 {
-
-}
-
 small,
 .small {
     line-height: $headings-line-height;
@@ -115,54 +75,6 @@ blockquote,
 
     :root {
         --bs-body-font-size: #{$font-size-base * 1.125};
-    }
-
-    .display-1 {
-
-    }
-    
-    h1, .h1 {
-
-    }
-    
-    h2, .h2 {
-
-    }
-    
-    h3, .h3 {
-
-    }
-    
-    h4, .h4 {
-
-    }
-
-    h5, .h5 {
-
-    }
-
-    h6, .h6 {
-
-    }
-
-    .lead {
-
-    }
-
-    .display-1 {
-
-    }
-    
-    .display-2 {
-    
-    }
-    
-    .display-3 {
-    
-    }
-    
-    .display-4 {
-    
     }
     
 }

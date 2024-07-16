@@ -16,11 +16,6 @@ select.facetwp-dropdown {
 .facetwp-search {
     @extend .form-control;
 }
-.facetwp-type-dropdown select,
-.facetwp-type-fselect .fs-label-wrap {
-    // background-color: $secondary-10;
-    // color: $white;
-}
 
 .facetwp-type-fselect .fs-label-wrap .fs-label {
     padding: 0;

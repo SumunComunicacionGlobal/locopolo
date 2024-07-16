@@ -10,34 +10,17 @@ jQuery(document).ready(function($) {
 
   var body = $('body');
   var scrolled = false;
-  // var lastScrollTop = 0;
-  // var navbarClasses = $('#main-nav').attr('class');
 
   jQuery(window).scroll(function(event) {
       var scroll = $(this).scrollTop();
-      // if ( scroll > lastScrollTop ) {
-      //     body.removeClass("scrolled-upwards");
-      // } else {
-      //     body.addClass("scrolled-upwards");
-      // }
-      // lastScrollTop = scroll;
 
       if (scroll >= 30) {
           body.addClass("scrolled");
           scrolled = true;
-          // $('#main-nav').removeClass('navbar-dark');
-          // $('#main-nav').addClass('navbar-light');
       } else {
           body.removeClass("scrolled");
           scrolled = false;
-          // $('#main-nav').removeClass('navbar-light navbar-dark').addClass(navbarClasses);
       }
-
-      //  if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-      //      body.addClass("near-bottom");
-      //  } else {
-      //       body.removeClass("near-bottom");
-      //  }
 
     });
 

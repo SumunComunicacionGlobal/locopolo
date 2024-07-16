@@ -247,23 +247,6 @@ function smn_get_product_cat_thumbnail_id( $category = null ) {
 
     $image_id = get_term_meta($category->term_id, 'thumbnail_id', true);
 
-    // if ( !$image_id ) {
-    //     // Obtener el id de la imagen destacada del primer producto de la categoría
-    //     $args = array(
-    //         'post_type' => 'product',
-    //         'posts_per_page' => 1,
-    //         'product_cat' => $category->slug,
-    //     );
-    //     $products = new WP_Query( $args );
-    //     if ( $products->have_posts() ) {
-    //         while ( $products->have_posts() ) {
-    //             $products->the_post();
-    //             $image_id = get_post_thumbnail_id();
-    //         }
-    //     }
-    //     wp_reset_postdata();
-    // }
-
     return $image_id;
 
 }
@@ -307,17 +290,6 @@ function smn_multi_image( $object, $lazy = false ) {
             'product_cat' => $object->slug,
         );
         
-        // $additional_images_ids = array();
-        // $products = new WP_Query( $args );
-        
-        // if ( $products->have_posts() ) {
-
-        //     while ( $products->have_posts() ) { $products->the_post();
-        //         $additional_images_ids[] = get_post_thumbnail_id();
-        //     }
-
-        // }
-
         wp_reset_postdata();
 
     } else {
@@ -348,22 +320,18 @@ function smn_multi_image( $object, $lazy = false ) {
 
                 if ( $additional_images_ids ) {
 
-                        // echo '<div class="multi-featured-image--thumbnails">';
+                    foreach ( $additional_images_ids as $image_id ) {
 
-                            foreach ( $additional_images_ids as $image_id ) {
+                        if ( $lazy ) {
 
-                                if ( $lazy ) {
+                            echo '<img data-lazy="'. wp_get_attachment_image_url( $image_id, 'medium_large' ) .'" alt="'. $title .'" />';
+                    
+                        } else {
 
-                                    echo '<img data-lazy="'. wp_get_attachment_image_url( $image_id, 'medium_large' ) .'" alt="'. $title .'" />';
-                            
-                                } else {
+                            echo wp_get_attachment_image( $image_id, 'medium_large' );
 
-                                    echo wp_get_attachment_image( $image_id, 'medium_large' );
-
-                                }
-                            }
-
-                        // echo '</div>';
+                        }
+                    }
 
                 }
 
@@ -427,16 +395,15 @@ function smn_brand_logos_dropdown_old() {
 
                     echo '<div class="brand-logos-dropdown--item '. $term_slug .'">';
 
-                        // if ( $product_cat->term_id == HOME_TERM_ID ) {
-                        //     echo '<a rel="home" href="'. get_home_url() .'">';
-                        // } else {
-                            echo '<a href="'. get_term_link( $product_cat ) .'">';
-                        // }
+                        echo '<a href="'. get_term_link( $product_cat ) .'">';
+
                             echo '<span class="brand-logos-dropdown--logo">' . $brand_icon_image . '</span>';
+                            
                             if ( $stamp_icon_id ) {
                                 $sticker_icon_image = wp_get_attachment_image( $stamp_icon_id, 'medium' );
                                 echo '<span class="brand-logos-dropdown--sticker">' . $sticker_icon_image . '</span>';
                             }
+
                         echo '</a>';
 
                         smn_new_product_sticker( $product_cat );
@@ -488,11 +455,8 @@ function smn_brand_logos_dropdown() {
 
                     echo '<div class="brand-logos-dropdown--item '. $term_slug .'">';
 
-                        // if ( $product_cat->term_id == HOME_TERM_ID ) {
-                        //     echo '<a rel="home" href="'. get_home_url() .'">';
-                        // } else {
-                            echo '<a href="'. $brand_link .'">';
-                        // }
+                        echo '<a href="'. $brand_link .'">';
+
                             echo '<span class="brand-logos-dropdown--logo">' . $brand_icon_image . '</span>';
                             if ( $stamp_icon_id ) {
                                 $sticker_icon_image = wp_get_attachment_image( $stamp_icon_id, 'medium' );
@@ -539,11 +503,7 @@ function smn_brand_stamps_dropup() {
 
                 foreach ( $product_cats as $index => $product_cat ) {
 
-                    // if ( $product_cat->term_id == HOME_TERM_ID ) {
-                    //     $link = get_home_url();
-                    // } else {
-                        $link = get_term_link( $product_cat );
-                    // }
+                    $link = get_term_link( $product_cat );
 
                     $stamp_icon_id = get_term_meta( $product_cat->term_id, 'stamp_icon', true );
                     $term_slug = sanitize_title( $product_cat->name );

@@ -38,35 +38,31 @@ if (!empty($categories)) {
 
     echo '</div>';
     
-    // echo '<div class="alignfullxxx">';
+    echo '<div class="products-carousel">';
 
-        echo '<div class="products-carousel">';
+        echo '<div class="slick-carousel">';
 
-            echo '<div class="slick-carousel">';
+        foreach ($categories as $category) {
 
-            foreach ($categories as $category) {
+            echo '<div class="slide">';
 
-                echo '<div class="slide">';
+                echo '<div class="container">';
 
-                    echo '<div class="container">';
-
-                        get_template_part( 'loop-templates/content', 'product_cat', array( 'category' => $category, 'lazy' => false ) );
-
-                    echo '</div>';
+                    get_template_part( 'loop-templates/content', 'product_cat', array( 'category' => $category, 'lazy' => false ) );
 
                 echo '</div>';
-            }
 
             echo '</div>';
-
-            echo '<div class="slick-navigation-container container d-flex"></div>';
-
-            echo '<div class="slick-invisible-arrow slick-invisible-prev"></div>';
-            echo '<div class="slick-invisible-arrow slick-invisible-next"></div>';
+        }
 
         echo '</div>';
 
-    // echo '</div>';
+        echo '<div class="slick-navigation-container container d-flex"></div>';
+
+        echo '<div class="slick-invisible-arrow slick-invisible-prev"></div>';
+        echo '<div class="slick-invisible-arrow slick-invisible-next"></div>';
+
+    echo '</div>';
     
 }
 ?>

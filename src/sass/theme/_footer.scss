@@ -20,7 +20,6 @@
 #fixed-right-sidebar {
 	position: fixed;
 	right: $spacer/2;
-	// bottom: 20%;
 	bottom: 80px;
 
 	.is-layout-flex {
@@ -40,10 +39,6 @@
 	a {
 		display: inline-block;
 		margin-top: $spacer;
-
-		// > img {
-		// 	animation: rotate 8s linear infinite;
-		// }
 	}
 
 	img {

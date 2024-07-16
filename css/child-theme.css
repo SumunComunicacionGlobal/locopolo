@@ -7392,7 +7392,7 @@ textarea.is-invalid.facetwp-search,
   --bs-aspect-ratio: 42.8571428571%;
 }
 
-.fixed-top {
+.fixed-top, #wrapper-navbar {
   position: fixed;
   top: 0;
   right: 0;
@@ -11695,12 +11695,12 @@ html {
   scroll-behavior: smooth;
 }
 
-body.admin-bar .fixed-top,
+body.admin-bar .fixed-top, body.admin-bar #wrapper-navbar,
 body.admin-bar .offcanvas {
   top: 46px;
 }
 @media (min-width: 782px) {
-  body.admin-bar .fixed-top,
+  body.admin-bar .fixed-top, body.admin-bar #wrapper-navbar,
   body.admin-bar .offcanvas {
     top: 32px;
   }
@@ -13049,16 +13049,6 @@ body.understrap-no-sidebar .alignwide {
   height: 100%;
 }
 
-.redes-sociales {
-  display: flex;
-  width: 100%;
-  align-items: center;
-}
-.redes-sociales .red-social {
-  font-size: 2rem;
-  margin-right: 1rem;
-}
-
 .wp-block-social-links.is-style-logos-only .wp-social-link svg {
   height: 20px;
   width: 20px;
@@ -13938,6 +13928,7 @@ body.has-ticker .offcanvas.show #buttons-menu, body.has-ticker .offcanvas.showin
     transform: scale(0.6) translateX(-30%);
   }
 }
+
 .slick-dots {
   bottom: 0;
   width: auto;
@@ -13948,6 +13939,7 @@ body.has-ticker .offcanvas.show #buttons-menu, body.has-ticker .offcanvas.showin
 .slick-dots li button:before {
   font-size: 0.875rem;
 }
+
 .products-carousel {
   position: relative;
 }
@@ -14092,6 +14084,7 @@ body.has-ticker .offcanvas.show #buttons-menu, body.has-ticker .offcanvas.showin
   top: 0;
   left: 0;
 }
+
 .slick-invisible-arrow {
   position: absolute;
   top: 0;

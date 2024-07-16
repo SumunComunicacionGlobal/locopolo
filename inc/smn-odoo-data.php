@@ -11,7 +11,6 @@ define( 'ODOO_API_PASS', 'web_bitevol');
 
 function after_xml_import($import_id, $import) {
     
-	// is is products import
 	if ($import_id == 1) {
 
 		$trigger_url = get_home_url() . '/wp-load.php?import_key=SGeEN-3BSbm&import_id=7&action=trigger';

@@ -6,15 +6,6 @@ defined( 'ABSPATH' ) || exit;
 
 if ( function_exists( 'register_block_style' ) ) {
 
-    // register_block_style(
-    //     'core/cover',
-    //     array(
-    //         'name'         => 'image-header',
-    //         'label'        => __( 'Cabecera', 'smn-admin' ),
-    //         'is_default'   => false,
-    //     )
-    // );
-
     register_block_style(
         'core/columns',
         array(
@@ -89,19 +80,6 @@ if ( function_exists( 'register_block_style' ) ) {
                 'is_default'   => false,
             )
         );
-
-        // for ($i=1; $i <= 4; $i++) { 
-
-        //     register_block_style(
-        //         $block_type,
-        //         array(
-        //             'name'         => 'display-' . $i,
-        //             'label'        => sprintf( __( 'Display %s', 'smn-admin' ), $i ),
-        //             'is_default'   => false,
-        //         )
-        //     );
-
-        // }
             
     }
 
@@ -168,12 +146,6 @@ add_filter( 'render_block', 'faq_block_modifyer', 10, 2 );
 function faq_block_modifyer( $block_content, $block ) {
 
     if ( isset( $block['attrs']['className'] ) && str_contains( $block['attrs']['className'], 'is-style-faq' ) ) {
-
-        // if ( current_user_can( 'manage_options' ) ) :
-        //     echo '<pre>';
-        //         print_r ( $block );
-        //     echo '</pre>';
-        // endif;
 
         $title = $block['innerBlocks'][0]['innerHTML'];
         $content = str_replace( array($title, 'is-style-faq'), '', $block_content );        
@@ -263,23 +235,6 @@ function smn_eye_tooltip( $block_content, $block ) {
 
         $title = $block['innerBlocks'][0]['innerHTML'];
         $content = str_replace( $title, '', $block_content );      
-
-        // $allowed_tags = array(
-        //     'div' => array(
-        //         'class' => array(),
-        //     ),
-        //     'figure' => array(
-        //         'class' => array(),
-        //     ),
-        //     'img' => array(
-        //         'src' => array(),
-        //         'alt' => array(),
-        //         'class' => array(),
-        //     ),
-        //     'p' => array(
-        //         'class' => array(),
-        //     ),
-        // );
 
         $content = str_replace( '<figure', '<div', $content );
         $content = str_replace( '</figure>', '</div>', $content );

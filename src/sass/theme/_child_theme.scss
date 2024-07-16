@@ -186,7 +186,6 @@ body.scrolled .back-to-top {
     background-color: $secondary;
     padding: $spacer * .5 0;
     font-family: $font-family-monospace;
-    // z-index: $zindex-dropdown;
 
     .eocjs-newsticker {
         background-color: transparent;
@@ -277,9 +276,6 @@ body.scrolled .back-to-top {
 
 
     &.term-badge {
-        // display: inline-block;
-        // margin-bottom: $spacer*2;
-        // transform: rotate($rotation);
 
         .badge {
             font-size: 1.875rem;
@@ -360,9 +356,6 @@ body.scrolled .back-to-top {
     z-index: 1;
     top: -2.25rem;
     left: -1.25rem;
-    // width: 2.5rem;
-    // height: 2.5em;
-    // padding: .25rem;
     background-color: $yellow;
     border-radius: $border-radius-pill;
     box-shadow: $box-shadow-sm;
@@ -371,8 +364,6 @@ body.scrolled .back-to-top {
     @include media-breakpoint-up(lg) {
         top: -3.25rem;
         left: -2rem;
-        // width: 4rem;
-        // height: 4rem;
     }
 
     img,
@@ -428,9 +419,7 @@ body.scrolled .back-to-top {
     }
 
 }
-// .bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow {
-//     filter: drop-shadow(0px -#{$border-width} 0px $dark);
-// }
+
 .tooltip-arrow {
     display: none !important;
 }
