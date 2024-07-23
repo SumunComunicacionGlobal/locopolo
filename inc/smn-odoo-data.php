@@ -3,12 +3,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-define( 'ODOO_API_URL', 'https://erp.thelocopolo.com/jsonrpc/' );
-define( 'ODOO_API_DB', 'locopolo_fabrica' );
-define( 'ODOO_API_USER_NAME', 'web_bitevol' );
-define( 'ODOO_API_USER_ID', 43);
-define( 'ODOO_API_PASS', 'web_bitevol');
-
 function after_xml_import($import_id, $import) {
     
 	if ($import_id == 1) {

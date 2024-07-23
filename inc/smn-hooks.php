@@ -168,3 +168,17 @@ function modify_language_switcher($languages) {
     }
     return $languages;
 }
+
+// Allows to translate the title of a custom menu item (avoiding the use of WPML menu sync functionality)
+add_filter( 'wp_nav_menu_objects', 'smn_custom_menu_item_title', 10, 2 );
+function smn_custom_menu_item_title( $items, $args ) {
+    foreach ( $items as &$item ) {
+
+        if ( 'monta-tu-locopolo' === sanitize_title( $item->title ) ) {
+            $item->title = __( 'Monta tu LOCOPOLO', 'smn' );
+        }
+
+    }
+
+    return $items;
+}

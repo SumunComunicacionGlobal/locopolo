@@ -189,6 +189,9 @@ function smn_slider_gallery( $block_content, $block ) {
 
                         foreach ( $img_ids as $img_id ) {
 
+                            // get translated id
+                            $img_id = apply_filters( 'wpml_object_id', $img_id, 'attachment' );
+
                             // Obetener el título de la imagen
                             $img_title = get_the_title( $img_id );
 
