@@ -1,0 +1,311 @@
+.slick-carousel {
+	transition: $transition-base;
+	opacity: 0;
+
+	&.slick-initialized {
+		opacity: 1;
+	}
+}
+
+.slick-prev,
+.slick-next {
+	z-index: 1;
+
+	&:before {
+
+	}
+
+	&:hover {
+
+	}
+}
+
+.slick-prev {
+
+	&:before {
+		content: escape-svg( url( 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="11.852" height="20.879" viewBox="0 0 11.852 20.879"><path id="Trazado_6349" data-name="Trazado 6349" d="M0,0,9.023,9.022,18.051,0" transform="translate(10.437 1.414) rotate(90)" fill="none" stroke="#000" stroke-linejoin="bevel" stroke-width="4"/></svg>') );
+	}
+}
+
+.slick-next {
+
+	&:before {
+		content: escape-svg( url( 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="11.852" height="20.879" viewBox="0 0 11.852 20.879"><path id="Trazado_6264" data-name="Trazado 6264" d="M0,0,9.023,9.022,18.051,0" transform="translate(1.415 19.465) rotate(-90)" fill="none" stroke="#000" stroke-linejoin="bevel" stroke-width="4"/></svg>') );
+	}
+
+}
+
+.slick-carousel {
+	position: relative;
+
+	.slick-slide {
+		transition: $transition-base;
+		transform-origin: right center;
+
+		&.slick-current + .slick-slide {
+			transform-origin: left center;
+		}
+
+		&.slick-current .product-card--title-badge {
+			display: none;
+		}
+	}
+
+	.product-card,
+	.product-card--image-wrapper,
+	.product-card--image-wrapper img {
+		transition: $transition-base;
+	}
+
+	@include media-breakpoint-up(md) {
+
+		.slick-slide:not(.slick-current) {
+			transform: scale(.6) translateX(30%);
+
+			.product-card {
+				opacity: 0;
+				transform: translateY($spacer*5);
+			}
+
+			.product-card--wrapper:after {
+				width: 100%;
+				background-position: right center;
+			}
+
+			.product-card--image-wrapper {
+				right: 20%;
+			}
+
+		}
+
+		.slick-slide.slick-current {
+
+			.product-card {
+				transform: translateY(0);
+			}
+
+			+ .slick-slide {
+				transform: scale(.6) translateX(-30%);
+			}
+
+		}
+
+	}
+
+}
+
+
+.slick-dots {
+	bottom: 0;
+	width: auto;
+
+	li {
+		margin: 0 2px;
+
+		button {
+
+
+			&:before {
+				font-size: .875rem;
+			}
+		}
+
+	}
+}
+
+.products-carousel {
+	position: relative;
+
+	@include media-breakpoint-only(md) {
+
+		.slick-list {
+			margin-left: -4rem;
+			margin-right: -4rem;
+		}
+
+		.slick-slide {
+			padding-left: 4rem;
+			padding-right: 4rem;
+		}
+	}
+
+	.slick-list {
+		padding-top: 8rem;
+		margin-top: -8rem;
+
+		@include media-breakpoint-up(sm) {
+			padding-top: 13rem !important;
+			margin-top: -13rem;
+		}
+
+		@include media-breakpoint-up(xl) {
+			padding-top: 16rem !important;
+			margin-top: -16rem;
+		}
+	}
+
+	&.one-slide-centered-carousel {
+
+		.slick-track {
+			transform: none !important;
+		}
+
+		.slick-navigation-container {
+			display: none !important;
+		}
+	}
+
+}
+
+.slick-navigation-container {
+	gap: $spacer*.5;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+
+	.slick-next {
+		order: 1;
+	}
+
+	.slick-prev,
+	.slick-next {
+
+		&::before {
+			color: $body-color;
+		}
+	}
+
+	.slick-prev,
+	.slick-next,
+	.slick-dots,
+	.slick-dots li button:before {
+		position: relative;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transform: none;
+	}
+
+	.slick-dots li button {
+		padding: 0;
+		margin-top: 8px;
+	}
+}
+
+.nav-link-prev,
+.nav-link-next {
+	position: relative;
+	width: 2rem;
+	height: 2rem;
+	background-color: $white;
+	border: $border-width solid $border-color;
+	border-radius: $border-radius-pill;
+	box-shadow: $box-shadow-sm;
+	padding: 0;
+	margin: 0 .5rem;
+
+	@include media-breakpoint-up(md) {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+
+	&:before {
+		content: escape-svg( url( 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="11.852" height="20.879" viewBox="0 0 11.852 20.879"><path id="Trazado_6349" data-name="Trazado 6349" d="M0,0,9.023,9.022,18.051,0" transform="translate(10.437 1.414) rotate(90)" fill="none" stroke="#000" stroke-linejoin="bevel" stroke-width="4"/></svg>') );
+		height: 20px;
+		
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(.5);
+
+		@include media-breakpoint-up(md) {
+			transform: translate(-50%, -50%) scale(1);
+		}
+	}
+
+}
+
+.nav-link-next {
+
+	&:before {
+		content: escape-svg( url( 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="11.852" height="20.879" viewBox="0 0 11.852 20.879"><path id="Trazado_6264" data-name="Trazado 6264" d="M0,0,9.023,9.022,18.051,0" transform="translate(1.415 19.465) rotate(-90)" fill="none" stroke="#000" stroke-linejoin="bevel" stroke-width="4"/></svg>') );
+	}
+
+}
+
+.related-products-carousel {
+	border: 1px solid $border-color;
+	border-radius: 2rem;
+	padding: $spacer* 2;
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+
+	.slick-prev,
+	.slick-next {
+		top: 0;
+		width: 3.5rem;
+		height: 3.5rem;
+
+		background-color: $white;
+		border: $border-width solid $border-color;
+		border-radius: $border-radius-pill;
+		box-shadow: $box-shadow-sm;
+	}
+
+	.slick-prev {
+		left: calc(50% - 3rem);
+		transform: translateY(-50%) translateX(-50%);
+	}
+
+	.slick-next {
+		right: calc(50% - 3rem);
+		transform: translateY(-50%) translateX(50%);
+	}
+}
+
+.wp-block-slider-gallery {
+
+	.slick-slide {
+		position: relative;
+		padding-left: $spacer*2;
+		padding-top: $spacer;
+
+		.badge-sticker--wrapper {
+			transform-origin: right top;;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+	}
+
+}
+
+.slick-invisible-arrow {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 20%;
+	background-color: transparent;
+	cursor: pointer;
+
+	&.slick-invisible-prev {
+		left: 0;
+	}
+
+	&.slick-invisible-next {
+		right: 0;
+	}
+
+	@include media-breakpoint-down(lg) {
+		display: none;
+	}
+}
+
+.slick-slide:not(.slick-current) .multi-featured-image a {
+	pointer-events: none;
+}
