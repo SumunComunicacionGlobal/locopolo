@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="49px" height="35px" viewBox="0 0 49 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>flecha-derecha</title>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="HOME" transform="translate(-171.000000, -5181.000000)" fill="#912A5A">
+            <g id="CTA-&amp;-BTN" transform="translate(89.857143, 40.435754)">
+                <g id="Group" transform="translate(88.642857, 5133.564246)">
+                    <g id="Arrow" transform="translate(17.500000, 24.500000) rotate(-90.000000) translate(-17.500000, -24.500000) ">
+                        <path d="M34.9397,31.3252 L18.1777,48.0712 C17.9907,48.2592 17.7367,48.3642 17.4707,48.3642 C17.2047,48.3642 16.9507,48.2592 16.7627,48.0712 L0.0007,31.3252 L1.4157,29.9112 L16.4697,44.9502 L16.4697,0.0002 L18.4717,0.0002 L18.4717,44.9502 L33.5247,29.9112 L34.9397,31.3252 Z" id="Fill-1"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

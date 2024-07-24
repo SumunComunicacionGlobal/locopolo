@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="24px" viewBox="0 0 32 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>flecha-derecha-blanca</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <polygon id="path-2" points="0.00046 0.000195918367 22.9603743 0.000195918367 22.9603743 31.5847837 0.00046 31.5847837"></polygon>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="INTERIOR" transform="translate(-1022.000000, -2996.000000)">
+            <g id="Group" transform="translate(1027.000000, 2992.000000)">
+                <g id="Group-3" transform="translate(11.500000, 16.000000) rotate(-90.000000) translate(-11.500000, -16.000000) " filter="url(#filter-1)">
+                    <g>
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M22.9603743,20.4572735 L11.9453457,31.3934367 C11.82246,31.5162122 11.6555457,31.5847837 11.4807457,31.5847837 C11.3059457,31.5847837 11.1390314,31.5162122 11.0154886,31.3934367 L0.00046,20.4572735 L0.930317143,19.5338449 L10.8229457,29.3552327 L10.8229457,0.000130612245 L12.1385457,0.000130612245 L12.1385457,29.3552327 L22.0305171,19.5338449 L22.9603743,20.4572735 Z" id="Fill-1" fill="#000000" mask="url(#mask-3)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
